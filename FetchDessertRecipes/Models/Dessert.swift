@@ -32,6 +32,7 @@ struct Dessert: Codable, Identifiable {
     let strIngredient18: String?
     let strIngredient19: String?
     let strIngredient20: String?
+    
     let strMeasure1: String?
     let strMeasure2: String?
     let strMeasure3: String?

@@ -8,8 +8,11 @@
 import SwiftUI
 
 class DessertViewModel: ObservableObject {
+    
     @Published var desserts: [Dessert] = []
+    
     @Published var isLoading = false
+    
     @Published var errorMessage: String?
 
     func fetchDesserts() {
@@ -31,4 +34,5 @@ class DessertViewModel: ObservableObject {
             }
         }
     }
+    
 }
