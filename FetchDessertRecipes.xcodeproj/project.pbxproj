@@ -14,6 +14,12 @@
 		4145911E2C598CD700B76CB1 /* FetchDessertRecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4145911D2C598CD700B76CB1 /* FetchDessertRecipesTests.swift */; };
 		414591282C598CD800B76CB1 /* FetchDessertRecipesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414591272C598CD800B76CB1 /* FetchDessertRecipesUITests.swift */; };
 		4145912A2C598CD800B76CB1 /* FetchDessertRecipesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414591292C598CD800B76CB1 /* FetchDessertRecipesUITestsLaunchTests.swift */; };
+		4145913C2C598E6500B76CB1 /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4145913B2C598E6500B76CB1 /* Dessert.swift */; };
+		4145913E2C598FF700B76CB1 /* DessertListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4145913D2C598FF700B76CB1 /* DessertListResponse.swift */; };
+		414591432C59906100B76CB1 /* DessertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414591422C59906100B76CB1 /* DessertService.swift */; };
+		414591452C59907B00B76CB1 /* DessertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414591442C59907B00B76CB1 /* DessertViewModel.swift */; };
+		414591472C59911000B76CB1 /* DessertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414591462C59911000B76CB1 /* DessertDetailView.swift */; };
+		414591492C59913100B76CB1 /* DessertRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414591482C59913100B76CB1 /* DessertRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		414591232C598CD800B76CB1 /* FetchDessertRecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchDessertRecipesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		414591272C598CD800B76CB1 /* FetchDessertRecipesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDessertRecipesUITests.swift; sourceTree = "<group>"; };
 		414591292C598CD800B76CB1 /* FetchDessertRecipesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDessertRecipesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4145913B2C598E6500B76CB1 /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
+		4145913D2C598FF700B76CB1 /* DessertListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertListResponse.swift; sourceTree = "<group>"; };
+		414591422C59906100B76CB1 /* DessertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertService.swift; sourceTree = "<group>"; };
+		414591442C59907B00B76CB1 /* DessertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewModel.swift; sourceTree = "<group>"; };
+		414591462C59911000B76CB1 /* DessertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailView.swift; sourceTree = "<group>"; };
+		414591482C59913100B76CB1 /* DessertRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +107,14 @@
 		4145910A2C598CD500B76CB1 /* FetchDessertRecipes */ = {
 			isa = PBXGroup;
 			children = (
+				414591112C598CD700B76CB1 /* FetchDessertRecipes.entitlements */,
 				4145910B2C598CD500B76CB1 /* FetchDessertRecipesApp.swift */,
 				4145910D2C598CD500B76CB1 /* ContentView.swift */,
+				414591412C59904B00B76CB1 /* Networking */,
+				414591382C598CEF00B76CB1 /* Models */,
+				414591372C598CE900B76CB1 /* Views */,
+				414591362C598CE100B76CB1 /* ViewModels */,
 				4145910F2C598CD700B76CB1 /* Assets.xcassets */,
-				414591112C598CD700B76CB1 /* FetchDessertRecipes.entitlements */,
 				414591122C598CD700B76CB1 /* Preview Content */,
 			);
 			path = FetchDessertRecipes;
@@ -127,6 +143,40 @@
 				414591292C598CD800B76CB1 /* FetchDessertRecipesUITestsLaunchTests.swift */,
 			);
 			path = FetchDessertRecipesUITests;
+			sourceTree = "<group>";
+		};
+		414591362C598CE100B76CB1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				414591442C59907B00B76CB1 /* DessertViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		414591372C598CE900B76CB1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				414591462C59911000B76CB1 /* DessertDetailView.swift */,
+				414591482C59913100B76CB1 /* DessertRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		414591382C598CEF00B76CB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4145913B2C598E6500B76CB1 /* Dessert.swift */,
+				4145913D2C598FF700B76CB1 /* DessertListResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		414591412C59904B00B76CB1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				414591422C59906100B76CB1 /* DessertService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +310,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4145910E2C598CD500B76CB1 /* ContentView.swift in Sources */,
+				414591472C59911000B76CB1 /* DessertDetailView.swift in Sources */,
+				4145913E2C598FF700B76CB1 /* DessertListResponse.swift in Sources */,
+				4145913C2C598E6500B76CB1 /* Dessert.swift in Sources */,
+				414591452C59907B00B76CB1 /* DessertViewModel.swift in Sources */,
+				414591432C59906100B76CB1 /* DessertService.swift in Sources */,
 				4145910C2C598CD500B76CB1 /* FetchDessertRecipesApp.swift in Sources */,
+				414591492C59913100B76CB1 /* DessertRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,6 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -434,7 +492,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -442,7 +500,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hunterdowney.FetchDessertRecipes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -472,7 +531,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -480,7 +539,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hunterdowney.FetchDessertRecipes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -8,14 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = DessertViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            if viewModel.isLoading {
+                ProgressView()
+                    .navigationTitle("Dessert Recipes")
+                    .navigationBarTitleDisplayMode(.inline)
+            } else if let errorMessage = viewModel.errorMessage {
+                Text("Error: \(errorMessage)")
+                    .navigationTitle("Dessert Recipes")
+                    .navigationBarTitleDisplayMode(.inline)
+            } else {
+                List(viewModel.desserts) { dessert in
+                    NavigationLink(destination: DessertDetailView(dessert: dessert)) {
+                        DessertRow(dessert: dessert)
+                    }
+                }
+                .navigationTitle("Dessert Recipes")
+                .navigationBarTitleDisplayMode(.inline)
+            }
         }
-        .padding()
+        .onAppear {
+            viewModel.fetchDesserts()
+        }
+        .alert(isPresented: .constant(viewModel.errorMessage != nil)) {
+            Alert(title: Text("Error"), message: Text(viewModel.errorMessage ?? ""), dismissButton: .default(Text("OK")))
+        }
     }
 }
 

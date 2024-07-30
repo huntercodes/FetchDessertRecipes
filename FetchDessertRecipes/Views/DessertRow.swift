@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct DessertRow: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    let dessert: Dessert
 
-#Preview {
-    DessertRow()
+    var body: some View {
+        HStack {
+            if let thumbnail = dessert.strMealThumb, let url = URL(string: thumbnail) {
+                AsyncImage(url: url) { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                } placeholder: {
+                    ProgressView()
+                }
+            }
+            Text(dessert.strMeal)
+        }
+    }
 }
