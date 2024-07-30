@@ -14,18 +14,11 @@ struct DessertDetailView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 if let thumbnail = dessert.strMealThumb, let url = URL(string: thumbnail) {
-                    AsyncImage(url: url) { image in
-                        image.resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: .infinity)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .shadow(radius: 10)
-                            .padding()
-                    } placeholder: {
-                        ProgressView()
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                    }
+                    AsyncImage(url: url)
+                        .scaledToFit()
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .shadow(radius: 10)
+                        .padding()
                 }
                 
                 Text(dessert.strMeal)
@@ -37,7 +30,6 @@ struct DessertDetailView: View {
                     Text("Instructions")
                         .font(.headline)
                         .padding([.top, .horizontal])
-                    
                     Text(instructions)
                         .padding(.horizontal)
                 }
@@ -50,9 +42,7 @@ struct DessertDetailView: View {
                     HStack {
                         Text(pair.0)
                             .font(.subheadline)
-                        
                         Spacer()
-                        
                         Text(pair.1)
                             .font(.subheadline)
                     }
