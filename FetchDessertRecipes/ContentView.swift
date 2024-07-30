@@ -17,15 +17,25 @@ struct ContentView: View {
                     .navigationTitle("Dessert Recipes")
                     .navigationBarTitleDisplayMode(.inline)
             } else if let errorMessage = viewModel.errorMessage {
-                Text("Error: \(errorMessage)")
-                    .navigationTitle("Dessert Recipes")
-                    .navigationBarTitleDisplayMode(.inline)
+                VStack {
+                    Image(systemName: "exclamationmark.triangle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 100)
+                        .foregroundColor(.red)
+                    Text("Error: \(errorMessage)")
+                        .multilineTextAlignment(.center)
+                        .padding()
+                }
+                .navigationTitle("Dessert Recipes")
+                .navigationBarTitleDisplayMode(.inline)
             } else {
                 List(viewModel.desserts) { dessert in
                     NavigationLink(destination: DessertDetailView(dessert: dessert)) {
                         DessertRow(dessert: dessert)
                     }
                 }
+                .listStyle(InsetGroupedListStyle())
                 .navigationTitle("Dessert Recipes")
                 .navigationBarTitleDisplayMode(.inline)
             }

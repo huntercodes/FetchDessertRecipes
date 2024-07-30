@@ -17,11 +17,16 @@ struct DessertRow: View {
                     image.resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 50, height: 50)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .shadow(radius: 5)
                 } placeholder: {
                     ProgressView()
                 }
             }
             Text(dessert.strMeal)
+                .font(.headline)
+                .padding(.leading, 10)
         }
+        .padding(.vertical, 5)
     }
 }
