@@ -8,6 +8,7 @@
 import XCTest
 @testable import FetchDessertRecipes
 
+// Core Unit Tests
 class DessertViewModelTests: XCTestCase {
 
     var viewModel: DessertViewModel!
@@ -25,7 +26,8 @@ class DessertViewModelTests: XCTestCase {
         mockService = nil
         super.tearDown()
     }
-
+    
+    // Verifies DessertViewModel correctly fetches and processes data when the network request is successful
     func testFetchDessertsSuccess() {
         let expectation = self.expectation(description: "Fetch desserts successfully")
         
@@ -44,6 +46,7 @@ class DessertViewModelTests: XCTestCase {
         waitForExpectations(timeout: 2, handler: nil)
     }
 
+    // Ensures DessertViewModel handles error gracefully when the network request fails
     func testFetchDessertsFailure() {
         let expectation = self.expectation(description: "Fetch desserts failure")
         
