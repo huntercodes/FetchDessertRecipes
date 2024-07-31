@@ -61,7 +61,7 @@ The project follows the MVVM (Model-View-ViewModel) pattern to ensure a clear se
 - **Favorite Recipes Feature**: It would have been fun to use more data persistence, to allow user's to store recipes to quickly find in the future.
 
 ## Conclusion
-**FetchDessertRecipes** showcases my ability to build a SwiftUI application that interacts with a remote API, handles asynchronous data fetching with async/await, and implement unit tests to ensure core functionality. Feel free to explore the code and tests to understand the implementation details. This project serves as a strong example of my practices in SwiftUI development.
+**FetchDessertRecipes** showcases my ability to build a SwiftUI application that interacts with a remote API, handle asynchronous data fetching with async/await, and implement unit tests to ensure core functionality. Feel free to explore the code and tests to understand the implementation details. This project serves as a strong example of my practices in SwiftUI development.
 
 
 
