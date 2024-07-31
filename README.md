@@ -55,3 +55,14 @@ The project follows the MVVM (Model-View-ViewModel) pattern to ensure a clear se
     - **testFetchDessertsSuccess**: Verifies that the `DessertViewModel` correctly fetches and processes the dessert data when the network request is successful.
     - **testFetchDessertsFailure**: Ensures that the `DessertViewModel` handles errors gracefully when the network request fails.
 
+## What I Would Add Given A Few More Hours
+- **Search Feature**: Allow the user to search for a specific dessert item they know exists, without having to scroll down to it.
+- **UI Testing**: I would have enjoyed adding the required code to test scrolling, tapping of a `DessertRow`, and ensuring all content exists.
+- **Favorite Recipes Feature**: It would have been fun to use more data persistence, to allow user's to store recipes to quickly find in the future.
+
+## Conclusion
+**FetchDessertRecipes** showcases my ability to build a SwiftUI application that interacts with a remote API, handles asynchronous data fetching with async/await, and implement unit tests to ensure core functionality. Feel free to explore the code and tests to understand the implementation details. This project serves as a strong example of my practices in SwiftUI development.
+
+
+
+
