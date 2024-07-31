@@ -7,15 +7,33 @@
 
 import Foundation
 
-class DessertService {
+class DessertService: DessertServiceProtocol {
     
     static let shared = DessertService()
+    
+    private let cacheKey = "cachedDesserts"
     
     private init() {}
 
     private let baseURL = "https://themealdb.com/api/json/v1/1"
 
+    private func loadCachedDesserts() -> [Dessert]? {
+        guard let data = UserDefaults.standard.data(forKey: cacheKey) else {
+            return nil
+        }
+        return try? JSONDecoder().decode([Dessert].self, from: data)
+    }
+
+    private func saveDessertsToCache(_ desserts: [Dessert]) {
+        let data = try? JSONEncoder().encode(desserts)
+        UserDefaults.standard.set(data, forKey: cacheKey)
+    }
+
     func fetchDesserts() async throws -> [Dessert] {
+        if let cachedDesserts = loadCachedDesserts() {
+            return cachedDesserts
+        }
+        
         let url = URL(string: "\(baseURL)/filter.php?c=Dessert")!
         let (data, _) = try await URLSession.shared.data(from: url)
         let dessertListResponse = try JSONDecoder().decode(DessertListResponse.self, from: data)
@@ -39,7 +57,9 @@ class DessertService {
             }
         }
         
-        return detailedDesserts.sorted { $0.strMeal < $1.strMeal }
+        let sortedDesserts = detailedDesserts.sorted { $0.strMeal < $1.strMeal }
+        saveDessertsToCache(sortedDesserts)
+        return sortedDesserts
     }
     
 }

@@ -15,13 +15,19 @@ class DessertViewModel: ObservableObject {
     
     @Published var errorMessage: String?
 
+    private let service: DessertServiceProtocol
+
+    init(service: DessertServiceProtocol = DessertService.shared) {
+        self.service = service
+    }
+
     func fetchDesserts() {
         Task {
             do {
                 DispatchQueue.main.async {
                     self.isLoading = true
                 }
-                let fetchedDesserts = try await DessertService.shared.fetchDesserts()
+                let fetchedDesserts = try await service.fetchDesserts()
                 DispatchQueue.main.async {
                     self.desserts = fetchedDesserts
                     self.isLoading = false

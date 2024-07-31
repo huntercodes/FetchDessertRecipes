@@ -30,6 +30,7 @@ struct DessertDetailView: View {
                     Text("Instructions")
                         .font(.headline)
                         .padding([.top, .horizontal])
+                    
                     Text(instructions)
                         .padding(.horizontal)
                 }
@@ -42,7 +43,9 @@ struct DessertDetailView: View {
                     HStack {
                         Text(pair.0)
                             .font(.subheadline)
+                        
                         Spacer()
+                        
                         Text(pair.1)
                             .font(.subheadline)
                     }
@@ -54,5 +57,6 @@ struct DessertDetailView: View {
         }
         .navigationTitle("Dessert Details")
         .navigationBarTitleDisplayMode(.inline)
+        .accessibility(identifier: "DessertDetailView")
     }
 }
