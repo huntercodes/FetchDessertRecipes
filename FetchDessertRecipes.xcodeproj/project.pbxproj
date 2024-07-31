@@ -78,8 +78,8 @@
 		414590FF2C598CD500B76CB1 = {
 			isa = PBXGroup;
 			children = (
-				4145911C2C598CD700B76CB1 /* FetchDessertRecipesTests */,
 				4145910A2C598CD500B76CB1 /* FetchDessertRecipes */,
+				4145911C2C598CD700B76CB1 /* FetchDessertRecipesTests */,
 				414591092C598CD500B76CB1 /* Products */,
 			);
 			sourceTree = "<group>";

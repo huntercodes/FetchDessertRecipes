@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// AsyncImage with ImageLoader for the large list to load thumbnails better using cached images
 struct AsyncImage: View {
     @StateObject private var loader: ImageLoader
     var placeholder: Image
@@ -38,6 +39,7 @@ struct AsyncImage: View {
     }
 }
 
+// ImageLoader used with AsyncImage to allow for cached images
 class ImageLoader: ObservableObject {
     
     @Published var image: UIImage?

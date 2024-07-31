@@ -17,10 +17,12 @@ class DessertViewModel: ObservableObject {
 
     private let service: DessertServiceProtocol
 
+    // Initialize DessertServiceProtocol for testing
     init(service: DessertServiceProtocol = DessertService.shared) {
         self.service = service
     }
 
+    // Fetch the desserts array using async
     func fetchDesserts() {
         Task {
             do {

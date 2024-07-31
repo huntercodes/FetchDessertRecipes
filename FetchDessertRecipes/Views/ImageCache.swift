@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Using NSCache to give a better user experience when viewing thumbnails on the dessert list
 class ImageCache {
     
     static let shared = ImageCache()

@@ -17,6 +17,7 @@ class DessertService: DessertServiceProtocol {
 
     private let baseURL = "https://themealdb.com/api/json/v1/1"
 
+    // Attempt to load cached data
     private func loadCachedDesserts() -> [Dessert]? {
         guard let data = UserDefaults.standard.data(forKey: cacheKey) else {
             return nil
@@ -24,11 +25,13 @@ class DessertService: DessertServiceProtocol {
         return try? JSONDecoder().decode([Dessert].self, from: data)
     }
 
+    // Attempt to cache the data
     private func saveDessertsToCache(_ desserts: [Dessert]) {
         let data = try? JSONEncoder().encode(desserts)
         UserDefaults.standard.set(data, forKey: cacheKey)
     }
 
+    // Asynchronous function to fetch an array of Dessert
     func fetchDesserts() async throws -> [Dessert] {
         if let cachedDesserts = loadCachedDesserts() {
             return cachedDesserts

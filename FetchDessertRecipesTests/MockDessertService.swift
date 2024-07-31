@@ -14,6 +14,7 @@ class MockDessertService: DessertServiceProtocol {
     
     var shouldReturnError = false
 
+    // Fetch mock desserts for testing
     func fetchDesserts() async throws -> [Dessert] {
         if shouldReturnError {
             throw URLError(.badServerResponse)

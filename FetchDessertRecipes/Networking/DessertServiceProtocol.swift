@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Protocol needed for testing
 protocol DessertServiceProtocol {
     func fetchDesserts() async throws -> [Dessert]
 }
