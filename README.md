@@ -52,8 +52,8 @@ The project follows the MVVM (Model-View-ViewModel) pattern to ensure a clear se
 - **Caching**: The app caches the fetched dessert data to improve performance and reduce unnecessary network calls.
 
 ### Unit Tests
-    - **testFetchDessertsSuccess**: Verifies that the `DessertViewModel` correctly fetches and processes the dessert data when the network request is successful.
-    - **testFetchDessertsFailure**: Ensures that the `DessertViewModel` handles errors gracefully when the network request fails.
+- **testFetchDessertsSuccess**: Verifies that the `DessertViewModel` correctly fetches and processes the dessert data when the network request is successful.
+- **testFetchDessertsFailure**: Ensures that the `DessertViewModel` handles errors gracefully when the network request fails.
 
 ## What I Would Add Given A Few More Hours
 - **Search Feature**: Allow the user to search for a specific dessert item they know exists, without having to scroll down to it.
