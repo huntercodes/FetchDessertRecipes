@@ -15,8 +15,8 @@ struct DessertRow: View {
             if let thumbnail = dessert.strMealThumb, let url = URL(string: thumbnail) {
                 AsyncImage(url: url)
                     .frame(width: 50, height: 50)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .shadow(radius: 5)
+                    .clipShape(RoundedRectangle(cornerRadius: 9))
+                    .shadow(radius: 6)
             }
             
             Text(dessert.strMeal)

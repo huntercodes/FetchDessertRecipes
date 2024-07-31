@@ -16,8 +16,8 @@ struct DessertDetailView: View {
                 if let thumbnail = dessert.strMealThumb, let url = URL(string: thumbnail) {
                     AsyncImage(url: url)
                         .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .shadow(radius: 10)
+                        .clipShape(RoundedRectangle(cornerRadius: 9))
+                        .shadow(radius: 9)
                         .padding()
                 }
                 
@@ -28,7 +28,7 @@ struct DessertDetailView: View {
 
                 if let instructions = dessert.strInstructions {
                     Text("Instructions")
-                        .font(.headline)
+                        .font(.title3.bold())
                         .padding([.top, .horizontal])
                     
                     Text(instructions)
@@ -36,7 +36,7 @@ struct DessertDetailView: View {
                 }
 
                 Text("Ingredients")
-                    .font(.headline)
+                    .font(.title3.bold())
                     .padding([.top, .horizontal])
 
                 ForEach(Array(dessert.ingredientMeasurementPairs().enumerated()), id: \.offset) { index, pair in
